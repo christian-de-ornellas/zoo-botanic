@@ -7,7 +7,7 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "Oi",
+      title: "Zoo Botânica Vale",
       home: Scaffold(
         body: Container(
           decoration: BoxDecoration(
@@ -16,7 +16,17 @@ class App extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          child: null,
+          child: Center(
+            child: FlatButton(
+              onPressed: () => print("Iniciar pesquisa"),
+              splashColor: Colors.teal,
+              child: Text(
+                "Início da pesquisa",
+                style: TextStyle(
+                    fontSize: 30, fontFamily: "Caecilia", color: Colors.white),
+              ),
+            ),
+          ),
         ),
       ),
     );
