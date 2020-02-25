@@ -41,6 +41,15 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/zoo_botanica_screen_one.jpg
+    - assets/images/zoo_botanica_screen_two.jpg
+    - assets/images/zoo_botanica_screen_tree.jpg
+    - assets/images/zoo_botanica_screen_four.jpg
+    - assets/images/zoo_botanica_screen_five.jpg
+    - assets/images/zoo_botanica_screen_six.jpg
+    - assets/images/zoo_botanica_screen_seven.jpg
+    - assets/images/zoo_botanica_screen_eigth.jpg
+    - assets/images/zoo_botanica_screen_nine.jpg
+    - assets/images/zoo_botanica_screen_ten.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
   # For details regarding adding assets from package dependencies, see
