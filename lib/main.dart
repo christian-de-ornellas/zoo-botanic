@@ -2,7 +2,21 @@ import 'package:flutter/material.dart';
 
 main() => runApp(App());
 
-class App extends StatelessWidget {
+class App extends StatefulWidget {
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  var _screen = 0;
+
+  void nextPage(int screen) {
+    setState(() {
+      _screen++;
+    });
+    print("Tela: $_screen");
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,7 +32,7 @@ class App extends StatelessWidget {
           ),
           child: Center(
             child: FlatButton(
-              onPressed: () => print("Iniciar pesquisa"),
+              onPressed: () => nextPage(_screen),
               splashColor: Colors.teal,
               child: Text(
                 "Início da pesquisa",
