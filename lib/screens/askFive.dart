@@ -8,7 +8,7 @@ class AskFive extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/zoo_botanica_screen_five.jpg"),
+            image: AssetImage("assets/images/zoo_botanica_screen_six.jpg"),
             fit: BoxFit.cover,
           ),
         ),

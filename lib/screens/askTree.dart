@@ -8,7 +8,7 @@ class AskTree extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/zoo_botanica_screen_tree.jpg"),
+            image: AssetImage("assets/images/zoo_botanica_screen_four.jpg"),
             fit: BoxFit.cover,
           ),
         ),
