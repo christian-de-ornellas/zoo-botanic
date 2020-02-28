@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoo_botanico_vale/screens/askFive.dart';
+import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
+import 'package:zoo_botanico_vale/widgets/Question.dart';
 
 class AskFour extends StatelessWidget {
   @override
@@ -12,20 +14,31 @@ class AskFour extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
-          child: FlatButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AskFive()),
-              );
-            },
-            splashColor: Colors.teal,
-            child: Text(
-              "Tela 4",
-              style: TextStyle(
-                  fontSize: 30, fontFamily: "Caecilia", color: Colors.white),
-            ),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AskFive()),
+                  );
+                },
+                splashColor: Colors.teal,
+                child: Question(
+                    question:
+                        "4. Antes da visita, o seu nível de conhecimento em relação ao Parque Zoobotânico Vale, era:"),
+              ),
+              CheckAsk(text: "Conhecia bem"),
+              CheckAsk(text: "Conhecia mais ou menos"),
+              CheckAsk(
+                  text:
+                      "Já havia ouvido falar, mas não sabia muito a respeito"),
+              CheckAsk(text: "Não conhecia"),
+            ],
           ),
         ),
       ),

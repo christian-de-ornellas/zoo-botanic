@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoo_botanico_vale/screens/askSecond.dart';
+import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
+import 'package:zoo_botanico_vale/widgets/Question.dart';
 
 class AskOne extends StatelessWidget {
   @override
@@ -12,9 +14,11 @@ class AskOne extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
+        child: SizedBox(
+          width: double.infinity,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               FlatButton(
                 onPressed: () {
@@ -24,25 +28,13 @@ class AskOne extends StatelessWidget {
                   );
                 },
                 splashColor: Colors.teal,
-                child: Text(
-                  "1. Onde você mora?",
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: "Caecilia",
-                      color: Colors.white),
-                ),
+                child: Question(question: "1. Onde você mora?"),
               ),
-              CheckboxListTile(
-                  subtitle: Text("data"),
-                  title: Text(
-                    "Parepebus",
-                    style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: "Caecilia",
-                        color: Colors.white),
-                  ),
-                  value: false,
-                  onChanged: null)
+              CheckAsk(text: "Parauapebas"),
+              CheckAsk(text: "Canaã dos Carajás"),
+              CheckAsk(text: "Marabá"),
+              CheckAsk(text: "Belém"),
+              CheckAsk(text: "Outro"),
             ],
           ),
         ),
