@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:zoo_botanico_vale/screens/askSecond.dart';
+import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
+import 'package:zoo_botanico_vale/widgets/Question.dart';
 
 class AskOne extends StatelessWidget {
   @override
@@ -8,24 +10,32 @@ class AskOne extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/zoo_botanica_screen_one.jpg"),
+            image: AssetImage("assets/images/zoo_botanica_screen_two.jpg"),
             fit: BoxFit.cover,
           ),
         ),
-        child: Center(
-          child: FlatButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => AskSecond()),
-              );
-            },
-            splashColor: Colors.teal,
-            child: Text(
-              "Tela 1",
-              style: TextStyle(
-                  fontSize: 30, fontFamily: "Caecilia", color: Colors.white),
-            ),
+        child: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              FlatButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => AskSecond()),
+                  );
+                },
+                splashColor: Colors.teal,
+                child: Question(question: "1. Onde você mora?"),
+              ),
+              CheckAsk(text: "Parauapebas"),
+              CheckAsk(text: "Canaã dos Carajás"),
+              CheckAsk(text: "Marabá"),
+              CheckAsk(text: "Belém"),
+              CheckAsk(text: "Outro"),
+            ],
           ),
         ),
       ),
