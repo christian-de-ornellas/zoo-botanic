@@ -17,7 +17,7 @@ class AskFour extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.all(60.0),
+            padding: const EdgeInsets.all(30.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -38,7 +38,7 @@ class AskFour extends StatelessWidget {
                 CheckAsk(text: "Conhecia mais ou menos"),
                 CheckAsk(
                     text:
-                        "Já havia ouvido falar, mas não sabia muito a respeito"),
+                        "Já havia ouvido falar, mas não sabia muito a respeito."),
                 CheckAsk(text: "Não conhecia"),
               ],
             ),
