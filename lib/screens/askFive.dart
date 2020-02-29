@@ -16,28 +16,44 @@ class AskFive extends StatelessWidget {
         ),
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AskSix()),
-                  );
-                },
-                splashColor: Colors.teal,
-                child: Question(
-                    question:
-                        "5. Numa escala de 1 a 10 (dez), na qual 1 é totalmente negativa e 10 é totalmente positiva, qual a sua avaliação sobre o Parque Zoobotânico Vale?"),
-              ),
-              CheckAsk(text: "1"),
-              CheckAsk(text: "2"),
-              CheckAsk(text: "3"),
-              CheckAsk(text: "4"),
-              CheckAsk(text: "5"),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(60.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AskSix()),
+                    );
+                  },
+                  splashColor: Colors.teal,
+                  child: Question(
+                      question:
+                          "5. Numa escala de 1 a 10 (dez), na qual 1 é totalmente negativa e 10 é totalmente positiva, qual a sua avaliação sobre o Parque Zoobotânico Vale?"),
+                ),
+                Row(
+                  children: <Widget>[
+                    CheckAsk(text: "1"),
+                    CheckAsk(text: "2"),
+                    CheckAsk(text: "3"),
+                    CheckAsk(text: "4"),
+                    CheckAsk(text: "5"),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    CheckAsk(text: "6"),
+                    CheckAsk(text: "7"),
+                    CheckAsk(text: "8"),
+                    CheckAsk(text: "9"),
+                    CheckAsk(text: "10"),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

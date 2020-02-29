@@ -16,26 +16,33 @@ class AskOne extends StatelessWidget {
         ),
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AskSecond()),
-                  );
-                },
-                splashColor: Colors.teal,
-                child: Question(question: "1. Onde você mora?"),
-              ),
-              CheckAsk(text: "Parauapebas"),
-              CheckAsk(text: "Canaã dos Carajás"),
-              CheckAsk(text: "Marabá"),
-              CheckAsk(text: "Belém"),
-              CheckAsk(text: "Outro"),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(60.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AskSecond()),
+                    );
+                  },
+                  splashColor: Colors.teal,
+                  child: Question(question: "1. Onde você mora?"),
+                ),
+                Column(
+                  children: <Widget>[
+                    CheckAsk(text: "Parauapebas"),
+                    CheckAsk(text: "Canaã dos Carajás"),
+                    CheckAsk(text: "Marabá"),
+                    CheckAsk(text: "Belém"),
+                    CheckAsk(text: "Outro"),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

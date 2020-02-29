@@ -8,14 +8,13 @@ class CheckAsk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: CheckboxListTile(
-          title: Text(
-            text,
+        child: Row(
+      children: <Widget>[
+        Checkbox(value: false, onChanged: null),
+        Text(text,
             style: TextStyle(
-                fontSize: 18, fontFamily: "Caecilia", color: Colors.white),
-          ),
-          value: false,
-          onChanged: null),
-    );
+                fontSize: 18, fontFamily: "Caecilia", color: Colors.white)),
+      ],
+    ));
   }
 }

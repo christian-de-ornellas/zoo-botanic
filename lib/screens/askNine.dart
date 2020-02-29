@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:zoo_botanico_vale/screens/askSeven.dart';
+import 'package:zoo_botanico_vale/screens/askTen.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
 
-class AskSix extends StatelessWidget {
+class AskNine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/zoo_botanica_screen_seven.jpg"),
+            image: AssetImage("assets/images/zoo_botanica_screen_nine.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -26,19 +26,19 @@ class AskSix extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AskSeven()),
+                      MaterialPageRoute(builder: (context) => AskTen()),
                     );
                   },
                   splashColor: Colors.teal,
                   child: Question(
-                      question: "6. Na sua avaliação, o que precisa melhorar?"),
+                      question:
+                          "9.Vejo a importância da presença da Vale em minha região"),
                 ),
-                CheckAsk(text: "Atendimento"),
-                CheckAsk(text: "Infraestrutura"),
-                CheckAsk(text: "Atrações (flora e fauna)"),
-                CheckAsk(text: "Horário de visita"),
-                CheckAsk(text: "Divulgação"),
-                CheckAsk(text: "Dificuldade na liberação e acesso ao parque"),
+                CheckAsk(text: "Concordo totalmente"),
+                CheckAsk(text: "Concordo parcialmente"),
+                CheckAsk(text: "Nem concordo e nem descordo"),
+                CheckAsk(text: "Discordo parcialmente"),
+                CheckAsk(text: "Discordo totalmente"),
               ],
             ),
           ),

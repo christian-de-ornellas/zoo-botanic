@@ -16,29 +16,32 @@ class AskFour extends StatelessWidget {
         ),
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AskFive()),
-                  );
-                },
-                splashColor: Colors.teal,
-                child: Question(
-                    question:
-                        "4. Antes da visita, o seu nível de conhecimento em relação ao Parque Zoobotânico Vale, era:"),
-              ),
-              CheckAsk(text: "Conhecia bem"),
-              CheckAsk(text: "Conhecia mais ou menos"),
-              CheckAsk(
-                  text:
-                      "Já havia ouvido falar, mas não sabia muito a respeito"),
-              CheckAsk(text: "Não conhecia"),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(60.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AskFive()),
+                    );
+                  },
+                  splashColor: Colors.teal,
+                  child: Question(
+                      question:
+                          "4. Antes da visita, o seu nível de conhecimento em relação ao Parque Zoobotânico Vale, era:"),
+                ),
+                CheckAsk(text: "Conhecia bem"),
+                CheckAsk(text: "Conhecia mais ou menos"),
+                CheckAsk(
+                    text:
+                        "Já havia ouvido falar, mas não sabia muito a respeito"),
+                CheckAsk(text: "Não conhecia"),
+              ],
+            ),
           ),
         ),
       ),
