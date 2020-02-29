@@ -16,25 +16,32 @@ class AskSecond extends StatelessWidget {
         ),
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AskTree()),
-                  );
-                },
-                splashColor: Colors.teal,
-                child: Question(
-                    question:
-                        "2. Trabalha na Vale (empregado ou terceirizado):"),
-              ),
-              CheckAsk(text: "Sim"),
-              CheckAsk(text: "Não"),
-            ],
+          child: Padding(
+            padding: const EdgeInsets.all(60.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                FlatButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => AskTree()),
+                    );
+                  },
+                  splashColor: Colors.teal,
+                  child: Question(
+                      question:
+                          "2. Trabalha na Vale (empregado ou terceirizado):"),
+                ),
+                Row(
+                  children: <Widget>[
+                    CheckAsk(text: "Sim"),
+                    CheckAsk(text: "Não"),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

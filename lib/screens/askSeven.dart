@@ -16,25 +16,34 @@ class AskSeven extends StatelessWidget {
         ),
         child: SizedBox(
           width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              FlatButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => AskEigth()),
-                  );
-                },
-                splashColor: Colors.teal,
-                child: Question(
-                    question:
-                        "7. O quanto você concorda com as seguintes frases? Dê uma nota de 01 a 05, sendo que 01 é concorda totalmente e 05 é discorda totalmente:"),
-              ),
-              CheckAsk(text: "1"),
-            ],
-          ),
+        child: Padding(
+             padding: const EdgeInsets.all(60.0),
+           child: Column(
+           mainAxisAlignment: MainAxisAlignment.center,
+           crossAxisAlignment: CrossAxisAlignment.start,
+           children: <Widget>[
+             FlatButton(
+               onPressed: () {
+                 Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => AskEigth()),
+                 );
+               },
+               splashColor: Colors.teal,
+               child: Question(
+                   question:
+                   "7. A Vale se preocupa com os impactos ambientais causados por suas atividades."),
+             ),
+
+             CheckAsk(text: "Concordo totalmente"),
+             CheckAsk(text: "Concordo parcialmente"),
+             CheckAsk(text: "Nem concordo e nem descordo"),
+             CheckAsk(text: "Discordo parcialmente"),
+             CheckAsk(text: "Discordo totalmente"),
+
+           ],
+         ),
+         ),
         ),
       ),
     );

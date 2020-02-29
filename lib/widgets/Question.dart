@@ -11,7 +11,7 @@ class Question extends StatelessWidget {
       child: Text(
         question,
         style: TextStyle(
-            fontSize: 26, fontFamily: "Caecilia", color: Colors.white),
+            fontSize: 24, fontFamily: "Caecilia", color: Colors.white),
       ),
     );
   }

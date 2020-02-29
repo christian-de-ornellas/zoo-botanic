@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:zoo_botanico_vale/screens/askSeven.dart';
+import 'package:zoo_botanico_vale/screens/end.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
 
-class AskSix extends StatelessWidget {
+class AskTen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/zoo_botanica_screen_seven.jpg"),
+            image: AssetImage("assets/images/zoo_botanica_screen_nine.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -26,19 +26,32 @@ class AskSix extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => AskSeven()),
+                      MaterialPageRoute(builder: (context) => End()),
                     );
                   },
                   splashColor: Colors.teal,
                   child: Question(
-                      question: "6. Na sua avaliação, o que precisa melhorar?"),
+                      question:
+                          "10. Me sinto motivado a indicar outras pessoas para conhecerem o Parque Zoobotânico Vale."),
                 ),
-                CheckAsk(text: "Atendimento"),
-                CheckAsk(text: "Infraestrutura"),
-                CheckAsk(text: "Atrações (flora e fauna)"),
-                CheckAsk(text: "Horário de visita"),
-                CheckAsk(text: "Divulgação"),
-                CheckAsk(text: "Dificuldade na liberação e acesso ao parque"),
+                Row(
+                  children: <Widget>[
+                    CheckAsk(text: "1"),
+                    CheckAsk(text: "2"),
+                    CheckAsk(text: "3"),
+                    CheckAsk(text: "4"),
+                    CheckAsk(text: "5"),
+                  ],
+                ),
+                Row(
+                  children: <Widget>[
+                    CheckAsk(text: "6"),
+                    CheckAsk(text: "7"),
+                    CheckAsk(text: "8"),
+                    CheckAsk(text: "9"),
+                    CheckAsk(text: "10"),
+                  ],
+                ),
               ],
             ),
           ),
