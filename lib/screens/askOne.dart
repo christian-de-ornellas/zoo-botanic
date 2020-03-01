@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:zoo_botanico_vale/screens/askSecond.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
+import 'dart:math';
 
 class AskOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DateTime now = new DateTime.now();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -34,11 +36,31 @@ class AskOne extends StatelessWidget {
                 ),
                 Column(
                   children: <Widget>[
-                    CheckAsk(text: "Parauapebas"),
-                    CheckAsk(text: "Canaã dos Carajás"),
-                    CheckAsk(text: "Marabá"),
-                    CheckAsk(text: "Belém"),
-                    CheckAsk(text: "Outro"),
+                    CheckAsk(
+                      text: "Parauapebas",
+                      question: "1",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "Canaã dos Carajás",
+                      question: "1",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "Marabá",
+                      question: "1",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "Belém",
+                      question: "1",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "Outro",
+                      question: "1",
+                      dateCreated: now.toString(),
+                    ),
                   ],
                 ),
               ],

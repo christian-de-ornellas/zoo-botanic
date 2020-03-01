@@ -23,12 +23,22 @@ class Start extends StatelessWidget {
             },
             splashColor: Colors.teal,
             child: Text(
-              "Início da pesquisa",
+              "#zoobotanicoVale",
               style: TextStyle(
                   fontSize: 30, fontFamily: "Caecilia", color: Colors.white),
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AskOne()),
+          );
+        },
+        child: Icon(Icons.play_arrow),
+        tooltip: "Iniciar Pesquisa",
       ),
     );
   }

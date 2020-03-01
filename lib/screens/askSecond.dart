@@ -6,6 +6,7 @@ import 'package:zoo_botanico_vale/widgets/Question.dart';
 class AskSecond extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DateTime now = new DateTime.now();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -36,8 +37,16 @@ class AskSecond extends StatelessWidget {
                 ),
                 Row(
                   children: <Widget>[
-                    CheckAsk(text: "Sim"),
-                    CheckAsk(text: "Não"),
+                    CheckAsk(
+                      text: "Sim",
+                      question: "2",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "Não",
+                      question: "2",
+                      dateCreated: now.toString(),
+                    ),
                   ],
                 ),
               ],

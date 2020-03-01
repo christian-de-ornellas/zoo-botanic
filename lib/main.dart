@@ -9,6 +9,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Zoo Botânica Vale",
+      theme: ThemeData(primarySwatch: Colors.teal),
       home: Start(),
     );
   }

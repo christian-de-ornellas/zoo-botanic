@@ -6,6 +6,7 @@ import 'package:zoo_botanico_vale/widgets/Question.dart';
 class AskNine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DateTime now = new DateTime.now();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -34,11 +35,31 @@ class AskNine extends StatelessWidget {
                       question:
                           "9.Vejo a importância da presença da Vale em minha região"),
                 ),
-                CheckAsk(text: "Concordo totalmente"),
-                CheckAsk(text: "Concordo parcialmente"),
-                CheckAsk(text: "Nem concordo e nem descordo"),
-                CheckAsk(text: "Discordo parcialmente"),
-                CheckAsk(text: "Discordo totalmente"),
+                CheckAsk(
+                  text: "Concordo totalmente",
+                  question: "9",
+                  dateCreated: now.toString(),
+                ),
+                CheckAsk(
+                  text: "Concordo parcialmente",
+                  question: "9",
+                  dateCreated: now.toString(),
+                ),
+                CheckAsk(
+                  text: "Nem concordo e nem descordo",
+                  question: "9",
+                  dateCreated: now.toString(),
+                ),
+                CheckAsk(
+                  text: "Discordo parcialmente",
+                  question: "9",
+                  dateCreated: now.toString(),
+                ),
+                CheckAsk(
+                  text: "Discordo totalmente",
+                  question: "9",
+                  dateCreated: now.toString(),
+                ),
               ],
             ),
           ),

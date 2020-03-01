@@ -6,6 +6,7 @@ import 'package:zoo_botanico_vale/widgets/Question.dart';
 class AskFour extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DateTime now = new DateTime.now();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -17,7 +18,7 @@ class AskFour extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -34,12 +35,32 @@ class AskFour extends StatelessWidget {
                       question:
                           "4. Antes da visita, o seu nível de conhecimento em relação ao Parque Zoobotânico Vale, era:"),
                 ),
-                CheckAsk(text: "Conhecia bem"),
-                CheckAsk(text: "Conhecia mais ou menos"),
-                CheckAsk(
-                    text:
-                        "Já havia ouvido falar, mas não sabia muito a respeito."),
-                CheckAsk(text: "Não conhecia"),
+                Column(
+                  children: <Widget>[
+                    CheckAsk(
+                      text: "Conhecia bem",
+                      question: "4",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "Conhecia mais ou menos",
+                      question: "4",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text:
+                          "Havia ouvido falar, mas não sabia muito a respeito.",
+                      question: "4",
+                      dateCreated: now.toString(),
+                      fontSizeDefault: 13,
+                    ),
+                    CheckAsk(
+                      text: "Não conhecia",
+                      question: "4",
+                      dateCreated: now.toString(),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
