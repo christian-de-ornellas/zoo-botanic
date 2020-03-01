@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:zoo_botanico_vale/models/Item.dart';
 import 'package:zoo_botanico_vale/screens/askEigth.dart';
 import 'package:zoo_botanico_vale/screens/askFive.dart';
 import 'package:zoo_botanico_vale/screens/askFour.dart';
@@ -12,6 +9,7 @@ import 'package:zoo_botanico_vale/screens/askSix.dart';
 import 'package:zoo_botanico_vale/screens/askTen.dart';
 import 'package:zoo_botanico_vale/screens/askTree.dart';
 import 'package:zoo_botanico_vale/screens/end.dart';
+import 'package:zoo_botanico_vale/db/database_helper.dart';
 
 class CheckAsk extends StatefulWidget {
   final String text;
@@ -19,10 +17,7 @@ class CheckAsk extends StatefulWidget {
   final String dateCreated;
   final double fontSizeDefault;
 
-  var items = new List<Item>();
-  CheckAsk({this.text, this.question, this.dateCreated, this.fontSizeDefault}) {
-    items = [];
-  }
+  CheckAsk({this.text, this.question, this.dateCreated, this.fontSizeDefault});
 
   @override
   _CheckAskState createState() => _CheckAskState();
@@ -31,24 +26,21 @@ class CheckAsk extends StatefulWidget {
 class _CheckAskState extends State<CheckAsk> {
   bool check = false;
 
-  void add() {
-    if (widget.text.isEmpty) return;
-    setState(() {
-      widget.items.add(
-        Item(
-          dateCreated: widget.dateCreated,
-          question: widget.question,
-          ask: widget.text,
-        ),
-      );
-    });
-    save();
-    nextScreen(widget.question);
+  void _inserir() async {
+    // linha para incluir
+    Map<String, dynamic> row = {
+      DatabaseHelper.columnQuestion: widget.question,
+      DatabaseHelper.columnDateCreated: widget.dateCreated,
+      DatabaseHelper.columnAsk: widget.text,
+    };
+    final id = await DatabaseHelper.instance.insert(row);
+    print('linha inserida id: $id');
   }
 
-  save() async {
-    var prefs = await SharedPreferences.getInstance();
-    await prefs.setString('data', jsonEncode(widget.items));
+  void add() {
+    if (widget.text.isEmpty) return;
+    _inserir();
+    nextScreen(widget.question);
   }
 
   void nextScreen(String question) {
