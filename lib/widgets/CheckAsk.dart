@@ -18,14 +18,11 @@ class CheckAsk extends StatefulWidget {
   final String question;
   final String dateCreated;
   final double fontSizeDefault;
-  var items = new List<Item>();
 
-  CheckAsk({
-    @required this.text,
-    this.question,
-    this.dateCreated,
-    this.fontSizeDefault = 16,
-  });
+  var items = new List<Item>();
+  CheckAsk({this.text, this.question, this.dateCreated, this.fontSizeDefault}) {
+    items = [];
+  }
 
   @override
   _CheckAskState createState() => _CheckAskState();
@@ -33,7 +30,26 @@ class CheckAsk extends StatefulWidget {
 
 class _CheckAskState extends State<CheckAsk> {
   bool check = false;
-  var newAskCtrl = TextEditingController();
+
+  void add() {
+    if (widget.text.isEmpty) return;
+    setState(() {
+      widget.items.add(
+        Item(
+          dateCreated: widget.dateCreated,
+          question: widget.question,
+          ask: widget.text,
+        ),
+      );
+    });
+    save();
+    nextScreen(widget.question);
+  }
+
+  save() async {
+    var prefs = await SharedPreferences.getInstance();
+    await prefs.setString('data', jsonEncode(widget.items));
+  }
 
   void nextScreen(String question) {
     if (question == "1") {
@@ -89,20 +105,6 @@ class _CheckAskState extends State<CheckAsk> {
     }
   }
 
-  void add() {
-    if (newAskCtrl.text.isEmpty) {
-      setState(() {
-        widget.items.add(
-          Item(
-            dateCreated: widget.dateCreated,
-            question: widget.question,
-            ask: widget.text,
-          ),
-        );
-      });
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -114,11 +116,10 @@ class _CheckAskState extends State<CheckAsk> {
               setState(() {
                 check = value;
               });
-
+              add();
               print("Pergunta: " + widget.question);
               print("Resposta: " + widget.text);
               print("Data: " + widget.dateCreated);
-              nextScreen(widget.question);
             }),
         Text(widget.text,
             style: TextStyle(

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:zoo_botanico_vale/screens/askSecond.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
-import 'dart:math';
 
 class AskOne extends StatelessWidget {
   @override
