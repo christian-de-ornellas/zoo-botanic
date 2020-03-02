@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zoo_botanico_vale/screens/askSecond.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
 
@@ -23,16 +22,7 @@ class AskOne extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AskSecond()),
-                    );
-                  },
-                  splashColor: Colors.teal,
-                  child: Question(question: "1. Onde você mora?"),
-                ),
+                Question(question: "1. Onde você mora?"),
                 Column(
                   children: <Widget>[
                     CheckAsk(

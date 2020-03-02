@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zoo_botanico_vale/screens/askEigth.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
 
@@ -23,18 +22,9 @@ class AskSeven extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AskEigth()),
-                    );
-                  },
-                  splashColor: Colors.teal,
-                  child: Question(
-                      question:
-                          "7. A Vale se preocupa com os impactos ambientais causados por suas atividades."),
-                ),
+                Question(
+                    question:
+                        "7. A Vale se preocupa com os impactos ambientais causados por suas atividades."),
                 CheckAsk(
                   text: "Concordo totalmente",
                   question: "7",

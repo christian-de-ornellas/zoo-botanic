@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zoo_botanico_vale/screens/askNine.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
 
@@ -23,18 +22,9 @@ class AskEigth extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AskNine()),
-                    );
-                  },
-                  splashColor: Colors.teal,
-                  child: Question(
-                      question:
-                          "8. A Vale contribui para a preservação da Floresta Amazônica."),
-                ),
+                Question(
+                    question:
+                        "8. A Vale contribui para a preservação da Floresta Amazônica."),
                 CheckAsk(
                   text: "Concordo totalmente",
                   question: "8",

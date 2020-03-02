@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zoo_botanico_vale/screens/end.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
 
@@ -23,18 +22,9 @@ class AskTen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => End()),
-                    );
-                  },
-                  splashColor: Colors.teal,
-                  child: Question(
-                      question:
-                          "10. Me sinto motivado a indicar outras pessoas para conhecerem o Parque Zoobotânico Vale."),
-                ),
+                Question(
+                    question:
+                        "10. Me sinto motivado a indicar outras pessoas para conhecerem o Parque Zoobotânico Vale."),
                 Row(
                   children: <Widget>[
                     CheckAsk(
