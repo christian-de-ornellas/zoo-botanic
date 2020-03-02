@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:zoo_botanico_vale/screens/askTen.dart';
 import 'package:zoo_botanico_vale/widgets/CheckAsk.dart';
 import 'package:zoo_botanico_vale/widgets/Question.dart';
 
@@ -23,18 +22,9 @@ class AskNine extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                FlatButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => AskTen()),
-                    );
-                  },
-                  splashColor: Colors.teal,
-                  child: Question(
-                      question:
-                          "9.Vejo a importância da presença da Vale em minha região"),
-                ),
+                Question(
+                    question:
+                        "9.Vejo a importância da presença da Vale em minha região"),
                 CheckAsk(
                   text: "Concordo totalmente",
                   question: "9",
