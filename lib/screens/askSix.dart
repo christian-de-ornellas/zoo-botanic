@@ -61,6 +61,7 @@ class AskSix extends StatelessWidget {
                 ),
                 CheckAsk(
                   text: "Dificuldade na liberação e acesso ao parque",
+                  question: "6",
                   fontSizeDefault: 13,
                   dateCreated: now.toString(),
                 ),

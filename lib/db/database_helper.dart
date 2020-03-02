@@ -6,7 +6,7 @@ import 'package:path_provider/path_provider.dart';
 class DatabaseHelper {
   static final _databaseName = "ZooBotanico.db";
   static final _databaseVersion = 1;
-  static final table = 'contato';
+  static final table = 'Questions';
   static final columnId = '_id';
   static final columnQuestion = 'question';
   static final columnAsk = 'ask';
@@ -59,6 +59,12 @@ class DatabaseHelper {
   Future<List<Map<String, dynamic>>> queryAllRows() async {
     Database db = await instance.database;
     return await db.query(table);
+  }
+
+  Future<List<Map<String, dynamic>>> queryRows() async {
+    Database db = await instance.database;
+    return await db.rawQuery(
+        "SELECT question, ask,  COUNT(*) AS total FROM $table WHERE $columnQuestion = 1 AND $columnAsk = 'Canaã dos Carajás'");
   }
 
   // Todos os métodos : inserir, consultar, atualizar e excluir,
