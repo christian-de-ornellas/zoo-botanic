@@ -20,7 +20,7 @@ class _ResultState extends State<Result> {
   }
 
   _questionCount() async {
-    final query = await DatabaseHelper.instance.queryRows();
+    final query = await DatabaseHelper.instance.queryRows('3', 'Sim');
     query.forEach((r) {
       setState(() {
         list.add(r);
@@ -41,19 +41,19 @@ class _ResultState extends State<Result> {
           ),
         ),
         child: ListView.builder(
-          itemCount: all.length,
+          itemCount: list.length,
           itemBuilder: (context, index) {
             return ListTile(
               title: Text(
-                  "Questão: ${all[index]["question"]} | Resposta: ${all[index]["ask"]}"),
+                  "Questão: ${list[index]["question"]} | Resposta: ${list[index]["ask"]} | Total: ${list[index]["total"]}"),
             );
           },
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          _listAll();
-          // _questionCount();
+          // _listAll();
+          _questionCount();
           // Navigator.push(
           //   context,
           //   MaterialPageRoute(builder: (context) => Start()),

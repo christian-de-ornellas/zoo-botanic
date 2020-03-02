@@ -61,10 +61,10 @@ class DatabaseHelper {
     return await db.query(table);
   }
 
-  Future<List<Map<String, dynamic>>> queryRows() async {
+  Future<List<Map<String, dynamic>>> queryRows(String q, String a) async {
     Database db = await instance.database;
     return await db.rawQuery(
-        "SELECT question, ask,  COUNT(*) AS total FROM $table WHERE $columnQuestion = 1 AND $columnAsk = 'Canaã dos Carajás'");
+        "SELECT question, ask,  COUNT(ask) AS total FROM $table WHERE $columnQuestion = $q AND $columnAsk = '$a'");
   }
 
   // Todos os métodos : inserir, consultar, atualizar e excluir,
