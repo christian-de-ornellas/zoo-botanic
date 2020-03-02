@@ -6,6 +6,7 @@ import 'package:zoo_botanico_vale/widgets/Question.dart';
 class AskTen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    DateTime now = new DateTime.now();
     return Scaffold(
       body: Container(
         decoration: BoxDecoration(
@@ -36,20 +37,60 @@ class AskTen extends StatelessWidget {
                 ),
                 Row(
                   children: <Widget>[
-                    CheckAsk(text: "1"),
-                    CheckAsk(text: "2"),
-                    CheckAsk(text: "3"),
-                    CheckAsk(text: "4"),
-                    CheckAsk(text: "5"),
+                    CheckAsk(
+                      text: "1",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "2",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "3",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "4",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "5",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
                   ],
                 ),
                 Row(
                   children: <Widget>[
-                    CheckAsk(text: "6"),
-                    CheckAsk(text: "7"),
-                    CheckAsk(text: "8"),
-                    CheckAsk(text: "9"),
-                    CheckAsk(text: "10"),
+                    CheckAsk(
+                      text: "6",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "7",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "8",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "9",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
+                    CheckAsk(
+                      text: "10",
+                      question: "10",
+                      dateCreated: now.toString(),
+                    ),
                   ],
                 ),
               ],

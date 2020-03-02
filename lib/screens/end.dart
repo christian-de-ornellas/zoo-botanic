@@ -22,12 +22,23 @@ class End extends StatelessWidget {
             },
             splashColor: Colors.teal,
             child: Text(
-              "Reiniciar app",
+              "Obrigado",
               style: TextStyle(
                   fontSize: 30, fontFamily: "Caecilia", color: Colors.white),
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Start()),
+          );
+        },
+        label: Text("Início"),
+        icon: Icon(Icons.home),
+        tooltip: "Iniciar Pesquisa",
       ),
     );
   }
